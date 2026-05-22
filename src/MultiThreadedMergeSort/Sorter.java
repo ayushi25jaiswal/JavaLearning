@@ -11,9 +11,11 @@ import java.util.concurrent.Future;
 public class Sorter implements Callable <List<Integer>> {
 
     private List<Integer> arrayToBeSorted;
+    private ExecutorService executor;
 
-    public Sorter (List<Integer> arrayToBeSorted){
+    public Sorter (List<Integer> arrayToBeSorted, ExecutorService executor){
         this.arrayToBeSorted = arrayToBeSorted;
+        this.executor = executor;
     }
 
     @Override
@@ -32,10 +34,10 @@ public class Sorter implements Callable <List<Integer>> {
         List<Integer> LeftArray = arrayToBeSorted.subList(0, mid);
         List<Integer> RightArray = arrayToBeSorted.subList(mid, arrayToBeSorted.size());
 
-        Sorter LeftArraySorterTask = new Sorter(LeftArray);
-        Sorter RightArraySorterTask = new Sorter(RightArray);
+        Sorter LeftArraySorterTask = new Sorter(LeftArray, executor);
+        Sorter RightArraySorterTask = new Sorter(RightArray, executor);
 
-        ExecutorService executor = Executors.newFixedThreadPool(2);
+//        ExecutorService executorService = Executors.newFixedThreadPool(2);
         //Runnable execute
         //Callable submit
 

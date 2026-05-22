@@ -10,8 +10,9 @@ public class Main {
     static void main(String[] args) throws ExecutionException, InterruptedException {
         List<Integer> arrayToSort = List.of(2,4,5,1,8,9,3);
 
-        Sorter sorter = new Sorter(arrayToSort);
         ExecutorService exe = Executors.newCachedThreadPool();
+        Sorter sorter = new Sorter(arrayToSort, exe);
+
 
         Future<List<Integer>> SortedArrayFuture = exe.submit(sorter);
 
