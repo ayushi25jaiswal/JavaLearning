@@ -22,3 +22,5 @@ public class Main {
         }
     }
 }
+
+//Arraylist is not thread safe data structure
