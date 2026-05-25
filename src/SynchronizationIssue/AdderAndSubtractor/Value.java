@@ -1,4 +1,4 @@
-package SynchronizationIssue;
+package SynchronizationIssue.AdderAndSubtractor;
 
 public class Value {
 
