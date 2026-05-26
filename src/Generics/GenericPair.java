@@ -1,4 +1,25 @@
 package Generics;
 
-public class GenericPair {
+public class GenericPair <T, V>{
+    private T first;
+    private V second;
+
+
+    public V getSecond() {
+        return second;
+    }
+
+    public T getFirst() {
+        return first;
+    }
+
+    public void setFirst(T first) {
+        this.first = first;
+    }
+
+    public void setSecond(V second) {
+        this.second = second;
+    }
+
+
 }
