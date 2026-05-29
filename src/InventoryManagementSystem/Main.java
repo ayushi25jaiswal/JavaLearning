@@ -34,5 +34,44 @@ public class Main {
         for (Item item : electronicsInventory.getAllItems()) {
             System.out.println(item.getName() + ": " + item.getPrice());
         }
+
+        System.out.println("****************************");
+
+        Item item2 = new Electronics(1, "Mobile", 5 , 999, 24);
+        Item item3 = new Electronics(2, "Watch", 5 , 999, 24);
+        Item item4 = new Electronics(3, "Ipad", 5 , 999, 24);
+        Item item5 = new Electronics(4, "Speaker", 5 , 999, 24);
+        Item item6 = new Book(5, "Java Programming", 50, 59, "John Doe");
+        Item item7 = new Book(6, "Java Programming 2", 50, 59, "John Doe");
+        Item item8 = new Book(7, "Java Programming 2", 50, 59, "John Doe");
+        Item item9 = new Book(8, "Java Programming 2", 50, 59, "John Doe");
+        Item item10 = new Book(9, "Java Programming 2", 50, 59, "John Doe");
+        Item item11 = new Book(10, "Java Programming 2", 50, 59, "John Doe");
+        Item item12 = new Book(11, "Java Programming 2", 50, 59, "John Doe");
+        RecentlyViewedItem recentlyViewedItems = new RecentlyViewedItem();
+
+        recentlyViewedItems.add(item3);
+        recentlyViewedItems.add(item2);
+        recentlyViewedItems.add(item5);
+        recentlyViewedItems.add(item2);
+        recentlyViewedItems.add(item5);
+        recentlyViewedItems.add(item4);
+        recentlyViewedItems.add(item6);
+        recentlyViewedItems.add(item8);
+        recentlyViewedItems.add(item9);
+        recentlyViewedItems.add(item10);
+        recentlyViewedItems.add(item11);
+        recentlyViewedItems.add(item12);
+
+
+
+
+        System.out.println("RecentlyViewedItems List : ");
+        List<Item> recentlyViewedItemsList = recentlyViewedItems.getRecentlyViewedItems();
+        for (Item item : recentlyViewedItemsList) {
+            System.out.println(item.getId());
+        }
+
+
     }
 }
