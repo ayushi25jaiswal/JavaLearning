@@ -22,6 +22,17 @@ public class Main {
         System.out.println(items);
 
         printItems(items);
-    }
 
+        System.out.println("******************************");
+        System.out.println("Electronics Inventory");
+        Inventory<Electronics> electronicsInventory = new Inventory<>();
+        electronicsInventory.add(new Electronics(1, "Laptop",50 ,  8 , 24));
+        electronicsInventory.add(new Electronics(2, "Laptop",15 ,  9 , 24));
+        electronicsInventory.add(new Electronics(3, "Mobile",500, 4, 24));
+
+        System.out.println("Items List from the Inventory : ");
+        for (Item item : electronicsInventory.getAllItems()) {
+            System.out.println(item.getName() + ": " + item.getPrice());
+        }
+    }
 }
