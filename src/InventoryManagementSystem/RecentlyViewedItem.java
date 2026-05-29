@@ -13,6 +13,7 @@ public class RecentlyViewedItem  {
 
     public void add(Item item){
         items.remove(item);//removing it so if it present in list already, remove redundancy.
+        // only remove when its present
         items.add(item);
 
         if(items.size()>10){

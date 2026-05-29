@@ -11,12 +11,12 @@ public class Main {
     static void main(String[] args) {
 
         List<Item> items = new ArrayList<>();
-        items.add(new Book(1,"Harry Potter", 200, 1,"JK" ));
-        items.add(new Book(2, "Game of Thrones", 200, 1,"JK"));
-        items.add(new Book(3, "Bhagvatgita", 200, 1,"JK"));
-        items.add(new Clothing(4, "Top", 200, 1,"XL"));
-        items.add(new Electronics(5, "Bulb", 200, 1,2));
-        items.add(new Electronics(6,"screw", 200, 1,0));
+        items.add(new Book(1,"Harry Potter", 12, 1,"JK" ));
+        items.add(new Book(2, "Game of Thrones", 20, 1,"JK"));
+        items.add(new Book(3, "Bhagvatgita", 2000, 1,"JK"));
+        items.add(new Clothing(4, "Top", 100, 1,"XL"));
+        items.add(new Electronics(5, "Bulb", 500, 1,2));
+        items.add(new Electronics(6,"screw", 46, 1,0));
 
         Collections.sort(items);
         System.out.println(items);
@@ -71,6 +71,20 @@ public class Main {
         for (Item item : recentlyViewedItemsList) {
             System.out.println(item.getId());
         }
+
+        System.out.println("****************************");
+
+        Collections.sort(items);
+        System.out.println(" Using Comparable interface");
+        for (Item item : items) {
+            System.out.println(item.getName() + ": " + item.getPrice());
+        }
+        System.out.println(" Using Comparator interface");
+        Collections.sort(items, new ItemPriceComparator());
+        for (Item item : items) {
+            System.out.println(item.getName() + ": " + item.getPrice());
+        }
+
 
 
     }
