@@ -85,6 +85,24 @@ public class Main {
             System.out.println(item.getName() + ": " + item.getPrice());
         }
 
+        System.out.println("*****************************");
+        Order order1 = new Order(true,2 );
+        Order order2 = new Order(false,1 );
+        Order order3 = new Order(false,3 );
+        Order order4 = new Order(true,4 );
+        Order order5 = new Order(true, 5);
+
+        OrderQueue orderProcessor = new OrderQueue();
+        orderProcessor.addOrder(order1);
+        orderProcessor.addOrder(order2);
+        orderProcessor.addOrder(order3);
+        orderProcessor.addOrder(order4);
+        orderProcessor.addOrder(order5);
+
+        while(orderProcessor.getSize() > 0){
+            orderProcessor.processOrder();
+        }
+
 
 
     }
