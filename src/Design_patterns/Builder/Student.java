@@ -31,6 +31,7 @@ public class Student {
         private String firstName;
         private String lastName;
         private String phone;
+
         private double psp;
         private String city;
         private String Address;
